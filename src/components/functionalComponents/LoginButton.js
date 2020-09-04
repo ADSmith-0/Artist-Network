@@ -8,7 +8,7 @@ function LoginButton() {
         let auth_params = {
             "client_id": process.env.REACT_APP_CLIENT_ID,
             "response_type": "token",
-            "redirect_uri": "http://localhost:3000/PersonalGraph/",
+            "redirect_uri": document.URL,
             "scope": "user-top-read"
         };
         auth_url.search = new URLSearchParams(auth_params).toString();
