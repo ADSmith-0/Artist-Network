@@ -1,0 +1,336 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body, svg {
+    height: 100%;
+    width: 100%;
+    font-size: 20px;
+    line-height: 1.6em;
+}
+
+h1 {
+    margin: 20px 20px;
+}
+
+/*Mainheader Component*/
+#mainHeader {
+    background: #333;
+    color: #eee;
+    padding: 25px 0 25px 40px;
+    font-size: 40px;
+}
+
+/*Header and navbar*/
+#headerAndNavbar{
+    position: sticky;
+    width:100%;
+    top: 0;
+}
+
+/*Navbar Component*/
+#navbar {
+    background: #777;
+    display: flex; 
+    padding: 14px 8px 14px 40px;
+}
+
+#navbar li {
+    display: inline;
+    padding-right: 50px;
+    color: #fff;
+    text-decoration: none;
+}
+
+#navbar .navigation {
+    color: #fff;
+    text-decoration: none;
+}
+
+/*Zeroing formatting on ul elements*/
+#navbar ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+/*Container for badges*/
+.container {
+    width: 60%;
+    margin: auto;
+}
+
+.container ul {
+    margin: 8px 0;
+}
+
+.container li {
+    display: inline;
+    margin-right: 5px;
+}
+
+/*Badge Component*/
+.badge {
+    font-size: 18px;
+    padding: 5px 9px;
+    border-radius: 15px;
+}
+
+.red {background-color: #ff8b8b}
+.orange{background-color: #ffd380;}
+.blue {background-color: #9fd1ff}
+.green {background-color: #aaffa2}
+.yellow {background-color: #faf0af}
+.pink {background-color: #ffaef7}
+.purple {background-color: #e1bfff}
+
+/*Graph component*/
+#graphContainer {
+    border: 2px solid #000;
+    height: 600px;
+}
+
+/*Submit button/generic button*/
+.button {
+    font-size: 16px;
+    outline:none;
+    border:none;
+    color: #fff;
+    background-color: #666;
+    border-radius: 2px;
+    padding: 8px 12px;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px #000;
+    text-align: center;
+    transition-duration: 0.2s;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+.button:active {
+    background-color: #555;
+    box-shadow: 1px 1px 1px #000;
+    transform: translateY(1px);
+    /*transform: translateX(3px);*/
+}
+
+/*Slider component*/
+#sliderContainer {
+    padding-top: 20px;
+    margin: auto;
+}
+
+#sliderContainer span {
+    padding:10px;
+}
+
+#sliderContainer button {
+    margin: 10px;
+}
+
+/*Slider css*/
+#artistsNumber{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 60%;
+    height: 0.5rem;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+    outline: none;
+    border: 0.01rem solid #999;
+    border-radius: 1rem;
+    box-shadow: 0.1rem 0.1rem 0.5em black;
+}
+
+#artistsNumber:hover{
+    opacity: 1;
+}
+
+#artistsNumber::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#artistsNumber::-moz-range-thumb {
+    -moz-appearance: none;
+    appearance: none;
+    width: 1.0rem;
+    height: 1.0rem;
+    border: 0.15rem solid #222;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/*ArtistDisplay component*/
+#artistDisplay {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+
+/*ArtistList component*/
+.artistList {
+    text-align: center;
+    flex: 1;
+}
+
+#artistListHeader {
+    border-bottom: 2px solid #555;
+    margin-top: 15px;
+}
+
+/*Artist component*/
+.artist {
+    margin:auto;
+    margin-top: 10px;
+    padding: 10px;
+    width:70%;
+    background-color: #fff;
+    display: flex;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 1px 1px 3px #000;
+}
+
+.artist span {
+    flex:1;
+}
+
+
+.functionalButton {
+    padding: 3px 10px;
+    font-size: 20px;
+    border-radius: 50%;
+    outline: none;
+    color: #fff;
+    border: none;
+    box-shadow: 1.2px 1.2px 2px #000;
+    opacity: 0.9;
+    transition-duration: 0.1s;
+    cursor: pointer;
+}
+
+.functionalButton:hover{
+    opacity: 1;
+}
+
+.functionalButton:active{
+    box-shadow: 1.2px 1.2px 1px #000;
+    transform: translateY(1px);
+}
+
+/*Login form*/
+#loginForm {
+    margin-top: 150px;
+    text-align: center;
+}
+
+#loginForm button {
+    display: flex;
+    margin: auto;
+}
+
+/*Spotify logo*/
+#loginForm img {
+    padding-right: 10px;
+}
+
+/*Login text*/
+#loginForm span {
+    margin:auto;
+}
+
+/*Loading spinner*/
+.spinner {
+    width: 25%;
+    margin:auto;
+    margin-top: 50px;
+    display: block;
+}
+
+.spinner p {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.spinner img {
+    width: 30%;
+    height: 30%;
+    padding-left: 12.5%;
+}
+
+/*About page*/
+#about-title {
+    font-size: 30px;
+    margin:auto;
+    margin-top: 20px;
+    padding-bottom: 20px; 
+    border-bottom: solid #000;
+    text-align: center;
+    width:60%;
+}
+
+.aboutSubheading {
+    font-size: 24px;
+    padding: 10px 50px 0px 50px;
+    margin-left: 25%;
+}
+
+.aboutParagraph {
+    font-weight: normal;
+    padding: 10px 50px 20px 50px;
+    width: 50%;
+    margin-left: 25%;
+}
+
+.aboutParagraph ul {
+    margin: 15px 50px;
+}
+
+.aboutParagraph li {
+    padding-bottom: 5px;
+}
+
+/*IntroText*/
+#introText {
+    padding: 10px;
+}
+
+#introText h3 {
+    width:80%;
+    font-size: 30px;
+    margin:auto;
+    border-bottom: solid #000;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.listHeader {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+#introText p, ul {
+    width:60%;
+    margin:auto;
+}
+
+#introText ul {
+    list-style: none;
+    width:50%;
+}
+
+#introText li {
+    padding: 10px;
+}
