@@ -6,7 +6,7 @@ import AboutBody from '../layoutComponents/AboutBody.js';
 
 function About() {
     return (
-        <div className="pageComponent">
+        <div>
             <HeaderAndNavbar msg="About"/>
             <AboutBody />
         </div>

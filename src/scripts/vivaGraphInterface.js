@@ -60,10 +60,10 @@ const initGraph = () => {
 const addNodesFromRecords = (nodes) => {
     for (let node of nodes) {
         window.graph.addNode(
-            node.get('a').properties.id,
-            [node.get('a').properties.name,
-            node.get('a').properties.genres,
-            node.get('a').properties.popularity]
+            node._fields['0'].properties.id,
+            [node._fields['0'].properties.name,
+            node._fields['0'].properties.genres,
+            node._fields['0'].properties.popularity]
         );
     }
 }
@@ -72,8 +72,8 @@ const addRelationshipsFromRecords = (relationships) => {
     for (let rel of relationships) {
         try {
             window.graph.addLink(
-                rel.get('a').properties.id,
-                rel.get('b').properties.id
+                rel._fields['0'].properties.id,
+                rel._fields['1'].properties.id
             );
         } catch (error) {
             console.error(error);

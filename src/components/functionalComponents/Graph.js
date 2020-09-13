@@ -3,7 +3,6 @@ import Badges from '../layoutComponents/Badges';
 import Slider from '../functionalComponents/Slider';
 import Spinner from '../layoutComponents/Spinner';
 import ArtistDisplay from '../layoutComponents/ArtistDisplay';
-import neo4jInterface from '../../scripts/neo4jInterface';
 import vivaGraphInterface from '../../scripts/vivaGraphInterface';
 import graphInterface from '../../scripts/graphInterface';
 
@@ -13,8 +12,8 @@ function Graph(props){
     const [loaded, setLoaded] = useState(false);
 
     async function drawTopArtists(limit){
-        let nodes = await neo4jInterface.returnTopNodes(limit).catch(error => console.error(error));
-        let relationships = await neo4jInterface.returnTopRelationships(limit).catch(error => console.error(error));
+        let nodes = await fetch(`${process.env.REACT_APP_READ_TOP_NODES_URL}${limit}`).then(response => response.json()).catch(error => console.error(error));
+        let relationships = await fetch(`${process.env.REACT_APP_READ_TOP_REL_URL}${limit}`).then(response => response.json()).catch(error => console.error(error));
         if (nodes === undefined) {
             return console.error("Could not contact database");
         }
@@ -35,7 +34,7 @@ function Graph(props){
         let ids = vals.map(artist => {
             return `"${artist.id}"`;
         });
-        let path = await neo4jInterface.getPath(ids);
+        let path = await fetch(`${process.env.REACT_APP_READ_GET_PATH_URL}${ids}`).then(response => response.json()).catch(error => console.error(error));
         let nodes = graphInterface.recordsToObj(path, 'name');
 
         //Get highest recommended artists
@@ -81,7 +80,6 @@ function Graph(props){
 
     function handleSlider(value){
         drawTopArtists(value);
-        console.log("called");
     }
 
     //init

@@ -51,11 +51,11 @@ const getPath = async (artists) => {
             call gds.alpha.shortestPath.stream({
                 nodeProjection: 'artist',
                 relationshipProjection: {
-                            SIMILAR: {
-                            type: 'similar',
-                            orientation: 'UNDIRECTED'
-                            }
-                    },
+                    SIMILAR: {
+                        type: 'similar',
+                        orientation: 'UNDIRECTED'
+                    }
+                },
                 startNode: a,
                 endNode: b
             })

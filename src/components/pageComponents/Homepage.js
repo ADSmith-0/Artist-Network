@@ -4,7 +4,7 @@ import IntroText from '../layoutComponents/IntroText';
 
 function Homepage() {
     return (
-        <div>
+        <div id="homepage">
             <HeaderAndNavbar />
             <IntroText />
         </div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 function AboutBody() {
     return (
-        <div>
+        <div id="aboutPage">
             <h3 id="about-title">About this app</h3>
             <br/>
             <h4 className="aboutSubheading">What was the purpose of this app?</h4>

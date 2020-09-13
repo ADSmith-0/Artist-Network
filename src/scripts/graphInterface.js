@@ -1,4 +1,3 @@
-import neo4jInterface from './neo4jInterface';
 import authInterface from './spotifyAuthInterface';
 
 async function getUserArtists() {
@@ -14,8 +13,9 @@ async function getUserArtists() {
     });
 
     let ids = artists.map(artist => `"${artist.id}"`);
-    let result = await neo4jInterface.doesExist(ids);
-    let existing_ids = result.map(a => a.get('a').properties.id);
+    let result = await fetch(`${process.env.REACT_APP_READ_DOES_EXIST_URL}${ids}`).then(response => response.json()).catch(error => console.error(error));
+
+    let existing_ids = result.map(a => a._fields['0'].properties.id);
     let final_artists;
     if (!(existing_ids.length === ids.length)) {
         final_artists = artists.map(artist => {
@@ -33,12 +33,14 @@ async function getUserArtists() {
 
 const recordsToObj = (nodes, key) => {
     let result = [];
-        nodes.forEach(artist => result.push({
-            "id": artist.get(key).properties.id,
-            "name": artist.get(key).properties.name,
-            "genres": artist.get(key).properties.genres,
-            "popularity": artist.get(key).properties.popularity
-        }));
+    nodes.forEach(artist => 
+        result.push({
+            "id": artist._fields['0'].properties.id,
+            "name": artist._fields['0'].properties.name,
+            "genres": artist._fields['0'].properties.genres,
+            "popularity": artist._fields['0'].properties.popularity
+        })
+    );
 
     return result;
 }
