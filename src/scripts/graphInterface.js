@@ -13,7 +13,7 @@ async function getUserArtists() {
     });
 
     let ids = artists.map(artist => `"${artist.id}"`);
-    let result = await fetch(`http://personalwebserver.ddns.net:8080/read/doesExist/${ids}`).then(response => response.json()).catch(error => console.error(error));
+    let result = await fetch(`https://personalwebserver.ddns.net:8080/read/doesExist/${ids}`).then(response => response.json()).catch(error => console.error(error));
 
     let existing_ids = result.map(a => a._fields['0'].properties.id);
     let final_artists;
