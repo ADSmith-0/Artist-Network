@@ -55,7 +55,7 @@ function Graph(props){
         setRecommendedArtists(recommendedArtists);
         //Make graph
         // console.log(nodes);
-        vivaGraphInterface.makeGraph(artists.length*30, nodes, nodes, true, value => setLoaded(value));
+        vivaGraphInterface.makeGraph(artists.length*20, nodes, nodes, true, value => setLoaded(value));
     }
 
     function handleClick(event){
