@@ -89,7 +89,7 @@ h1 {
 /*Graph component*/
 #graphContainer {
     border: 2px solid #000;
-    height: 80%;
+    height: 400px;
 }
 
 /*Submit button/generic button*/
