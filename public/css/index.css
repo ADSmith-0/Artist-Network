@@ -4,7 +4,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body, svg {
+html, body, svg, #root {
     height: 100%;
     width: 100%;
     font-size: 20px;
@@ -58,7 +58,7 @@ h1 {
 
 /*Container for badges*/
 .container {
-    width: 60%;
+    width: 50%;
     margin: auto;
 }
 
@@ -79,7 +79,7 @@ h1 {
 }
 
 .red {background-color: #ff8b8b}
-.orange{background-color: #ffd380;}
+.orange{background-color: #ffd380}
 .blue {background-color: #9fd1ff}
 .green {background-color: #aaffa2}
 .yellow {background-color: #faf0af}
@@ -89,7 +89,69 @@ h1 {
 /*Graph component*/
 #graphContainer {
     border: 2px solid #000;
-    height: 400px;
+    height: 500px;
+}
+
+/*Media queries to adjust graph height*/
+@media only screen and (min-height: 300px){
+    #graphContainer {
+        height: 150px
+    }
+}
+@media only screen and (min-height: 400px){
+    #graphContainer {
+        height: 200px
+    }
+}
+@media only screen and (min-height: 300px){
+    #graphContainer {
+        height: 150px
+    }
+}
+@media only screen and (min-height: 400px){
+    #graphContainer {
+        height: 200px
+    }
+}
+@media only screen and (min-height: 500px){
+    #graphContainer {
+        height: 250px
+    }
+}
+@media only screen and (min-height: 600px){
+    #graphContainer {
+        height: 300px
+    }
+}
+@media only screen and (min-height: 700px){
+    #graphContainer {
+        height: 350px
+    }
+}
+@media only screen and (min-height: 800px){
+    #graphContainer {
+        height: 400px
+    }
+}
+@media only screen and (min-height: 900px){
+    #graphContainer {
+        height: 450px
+    }
+}
+@media only screen and (min-height: 1000px){
+    #graphContainer {
+        height: 500px
+    }
+}
+@media only screen and (min-height: 1100px){
+    #graphContainer {
+        height: 550px
+    }
+}
+@media only screen and (min-height: 1200px){
+    #graphContainer {
+        height: 600px
+    }
 }
 
 /*Submit button/generic button*/
