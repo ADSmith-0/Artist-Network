@@ -12,8 +12,8 @@ function Graph(props){
     const [loaded, setLoaded] = useState(false);
 
     async function drawTopArtists(limit){
-        let nodes = await fetch(`https://personalwebserver.ddns.net:8080/read/topNodes/${limit}`).then(response => response.json()).catch(error => console.error(error));
-        let relationships = await fetch(`https://personalwebserver.ddns.net:8080/read/topRelationships/${limit}`).then(response => response.json()).catch(error => console.error(error));
+        let nodes = await fetch(`https://personalwebserver.ddns.net/read/topNodes/${limit}`).then(response => response.json()).catch(error => console.error(error));
+        let relationships = await fetch(`https://personalwebserver.ddns.net/read/topRelationships/${limit}`).then(response => response.json()).catch(error => console.error(error));
         if (nodes === undefined) {
             return console.error("Could not contact database");
         }
@@ -34,7 +34,7 @@ function Graph(props){
         let ids = vals.map(artist => {
             return `"${artist.id}"`;
         });
-        let path = await fetch(`https://personalwebserver.ddns.net:8080/read/getPath/${ids}`).then(response => response.json()).catch(error => console.error(error));
+        let path = await fetch(`https://personalwebserver.ddns.net/read/getPath/${ids}`).then(response => response.json()).catch(error => console.error(error));
         let nodes = graphInterface.recordsToObj(path, 'name');
 
         //Get highest recommended artists
