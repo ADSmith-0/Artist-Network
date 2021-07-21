@@ -1,6 +1,6 @@
 Note: CURRENTLY UNAVAILABLE. The server is down due to being unable to find hosting, so it has limited functionality. Gifs are posted below to see it in action.
 
-I am planning to remake this so that it will be up always, with better reliability, efficiency and functionality. This can be [found here](https://github.com/ADSmith-0/Artist-Network-v2)
+I am planning to remake this so that it will be up always, with better reliability, efficiency and functionality. This can be [found here](https://github.com/ADSmith-0/Artist-Network-v2).
 
 This project aims to help visualise spotify artist data. You can see the top artists and how they interact, or give permission to get you're personalised graph with suggestions under the personal graph tab. This was built with React.js, Neo4j, Express.js, Javascript, HTML and CSS. More can be read about in the about section of the deployed Heroku app https://artist-network01.herokuapp.com. 
 
